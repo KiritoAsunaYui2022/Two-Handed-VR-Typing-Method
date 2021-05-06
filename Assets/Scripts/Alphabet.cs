@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 
 public class Alphabet : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Alphabet : MonoBehaviour
     private bool Numbers;
     private bool SpecialCharacters; 
 
-    //I hate this Shift method. So when you activate Shift, ShiftStage == 1f, then once you select a letter, ShiftStage == 2f, then when Langle == 0f ... 
+    //I'm not sure how I feel about this Shift method. So when you activate Shift, ShiftStage == 1f, then once you select a letter, ShiftStage == 2f, then when Langle == 0f ... 
     //... and it ShiftStage == 2f, Shift = false and ShiftStage = 0f. It's the circle of shifting and the only way I could think of. Please simply this... works for now 
     private float ShiftStage;
 
@@ -37,15 +38,18 @@ public class Alphabet : MonoBehaviour
     public Image NumbersImage;
     public Image SpecialCharactersImage; 
 
-    public Text output;
-    public Text ShiftText;
-    public Text CAPStext;
-    public Text NumbersText;
-    public Text SpecialCharactersText;
+    //Texts 
+    public TextMeshProUGUI output; //I don't know why this has to be different from TextMeshPro but it is 
+    public TextMeshPro ShiftText;
+    public TextMeshPro CAPStext;
+    public TextMeshPro NumbersText;
+    public TextMeshPro SpecialCharactersText;
+
+    //public TextMeshProUGUI outputJapan; 
     //public Text soOn; 
     //public Text lOutput;
     //public Text isCenterText;
-    //public Text OVR;
+    //public Text OVR; 
 
 
     public void Start()
@@ -89,20 +93,19 @@ public class Alphabet : MonoBehaviour
     {
         if (currentLetterSelected.Length > letterStringLength)
         {
-            currentLetterSelected = currentLetterSelected.Remove(currentLetterSelected.Length - 1);
-            print("deSelectLetter");
+            currentLetterSelected = currentLetterSelected.Remove(currentLetterSelected.Length - 1); 
         }
     }
 
     public void cancel()
     {
         currentLetterSelected = ""; 
-        //Additional code here such as closing the typing system down 
+        //Your Additional code here such as closing the typing system down 
     }
 
     public void enter()
     {
-        //Code here 
+        //Your custom Code here 
     }
 
     //Get ready for a L O N G list of letters! 
@@ -787,7 +790,7 @@ public class Alphabet : MonoBehaviour
         }
     }
 
-    //I could have done this whole thing better because I'm going to have to check for true/false later on when I could have done it in one. For now its a POC. 
+    //I think I could have done this whole thing better because I'm going to have to check for true/false later on when I could have done it in one. For now its a POC. 
     public void buttonSelect()
     {
         //Backspace 
@@ -930,10 +933,67 @@ public class Alphabet : MonoBehaviour
             }
         }
 
+        //!f speci@! ch@r@cters @re ()n
+        if (SpecialCharacters)
+        {
+            SpecialCharactersText.text = "Special Characters: On";
+            Numbers = false;
+
+            if (CAPSLOCK || Shift)
+            {
+                AMuppercase.enabled = true;
+                amLowercase.enabled = false;
+
+                NZuppercase.enabled = false;
+                nzLowercase.enabled = false;
+
+                SpecialCharactersImage.enabled = true;
+            }
+
+            else
+            {
+                AMuppercase.enabled = false;
+                amLowercase.enabled = true;
+
+                NZuppercase.enabled = false;
+                nzLowercase.enabled = false;
+
+                SpecialCharactersImage.enabled = true;
+            }
+
+        }
+
+        else
+        {
+            SpecialCharactersText.text = "Special Characters: Off";
+
+            if (CAPSLOCK || Shift)
+            {
+                AMuppercase.enabled = true;
+                amLowercase.enabled = false;
+
+                NZuppercase.enabled = true;
+                nzLowercase.enabled = false;
+
+                SpecialCharactersImage.enabled = false;
+            }
+
+            else
+            {
+                AMuppercase.enabled = false;
+                amLowercase.enabled = true;
+
+                NZuppercase.enabled = false;
+                nzLowercase.enabled = true;
+
+                SpecialCharactersImage.enabled = false;
+            }
+        }
+
         //1f act1vated number5  
         if (Numbers)
         {
-            NumbersText.text = "Numb: On";
+            NumbersText.text = "Numbers: On";
             SpecialCharacters = false; 
 
             if (CAPSLOCK || Shift)
@@ -963,7 +1023,7 @@ public class Alphabet : MonoBehaviour
 
         else
         {
-            NumbersText.text = "Numb: Off"; 
+            NumbersText.text = "Numbers: Off"; 
 
             if (CAPSLOCK || Shift)
             {
@@ -988,68 +1048,15 @@ public class Alphabet : MonoBehaviour
             } 
         }
 
-        //!f speci@! ch@r@cters @re ()n
-        if (SpecialCharacters)
-        {
-            Numbers = false;
-            SpecialCharactersText.text = "Char: On";
-
-            if (CAPSLOCK || Shift)
-            {
-                AMuppercase.enabled = true;
-                amLowercase.enabled = false;
-
-                NZuppercase.enabled = false;
-                nzLowercase.enabled = false;
-
-                SpecialCharactersImage.enabled = true; 
-            }
-
-            else
-            {
-                AMuppercase.enabled = false;
-                amLowercase.enabled = true;
-
-                NZuppercase.enabled = false;
-                nzLowercase.enabled = false;
-
-                SpecialCharactersImage.enabled = true;
-            }
-
-        } 
-
-        else
-        {
-            SpecialCharactersText.text = "Charr: Off";
-
-            if (CAPSLOCK || Shift)
-            {
-                AMuppercase.enabled = true;
-                amLowercase.enabled = false;
-
-                NZuppercase.enabled = true;
-                nzLowercase.enabled = false;
-
-                SpecialCharactersImage.enabled = false;
-            }
-
-            else
-            {
-                AMuppercase.enabled = false;
-                amLowercase.enabled = true;
-
-                NZuppercase.enabled = false; 
-                nzLowercase.enabled = true;
-
-                SpecialCharactersImage.enabled = false;
-            }
-        }
+        
 
         //First check to see if PrimaryThumb is centered 
         if (Langle == 0f && Rangle == 0f)
         {
             isCenter = true;
-            print("String: " + currentLetterSelected.Length + ", Float: " + letterStringLength);
+            //print("String: " + currentLetterSelected.Length + ", Float: " + letterStringLength);
+
+            //Essentially when Langle's and Rangle's angles equal 0, meaning the joysticks are centered, then the selected letter is added to the output.  
             letterStringLength = currentLetterSelected.Length;
 
             if (ShiftStage == 2f)
@@ -1113,23 +1120,6 @@ public class Alphabet : MonoBehaviour
         //    space();
         //}
 
-        //if (isCenter == true)
-        //{
-        //    //currentLetterSelected += letterOutput;
-        //    if (letterOutput != currentLetterSelected)
-        //    {
-        //        //print("Astra: " + astra);
-        //        letterOutput = currentLetterSelected;
-        //    }
-        //}
-
-        //OVR.text = "CAPS: " + OVRInput.Get(OVRInput.Button.PrimaryThumbstick);
-        //isCenterText.text = "isCenter: " + isCenter;
-        //lOutput.text = "Curr: " + currentLetterSelected;
-        //output.text = "Output: " + letterOutput;
-
-        output.text = "Output: " + currentLetterSelected;
-        //soOn.text = "CAPS: " + CAPSLOCK; 
-
+        output.text = "Output: " + currentLetterSelected; 
     }
 }

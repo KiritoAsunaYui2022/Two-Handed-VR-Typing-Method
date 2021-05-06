@@ -1,0 +1,48 @@
+BE SURE TO LOOK AT THE MAPPING! 
+
+PURPOSE: 
+
+The purpose of this project/tool is to hopefully provide a less mundane typing method/system that is more intuitive 
+and similar to typing on a keyboard, or a phone than the common laser pointer system. It would be cool if this tool became useful in the eyes of VR users as a preference, but if not then at least I took 
+a crack at the problem, if some of you will call it that. 
+
+
+
+
+KNOWN BUGS: 
+
+There are a few, as this is it's Alpha stage, and it's a Proof Of Concept: 
+
+1) While selecting a letter on the Left Controller, sometimes when you release the thumbstick it will select another letter
+   and I don't know if its just my controller or not. 
+
+2) Also on the Left Controller, it will sometimes tweak out and print a bunch of letters when selecting a new letter. 
+
+3) You can't switch from Special Characters to Numbers when Special Characters is On but you can when vice versa. 
+   It is to do with the if statement ordering as Special Character is checked first, and then Numbers. If you switch the 
+   ordering around in code the opposite effect will happen. I don't know how to fix this right now. 
+
+
+
+FUTURE FEATURES, MAYBE: 
+
+If I continue to work on it, testing my novice programming skills, or others take it on, then here are some needed 
+future features: 
+
+1) A character lightup indicator, used for a visualization que of what character on the wheel you have selected. 
+   I want to do this, and I might because it won't take long, but for now I just wanted to get this tool out there. 
+
+2) An "Are you sure you want to Cancel?" indicator when the character count is past a certain threshold, like 10 characters. 
+
+3) Maybe a Cusrsor? 
+
+4) Some way to bring the tool in and out of the situation/scene.  
+
+5) This one is a big technical. The selection can kind of be bad at times where I say around 65% of the time you can select
+   the character you want. So in the current system, the moment your thumbstick isn't centered, you're selecting a character.
+   So, the new method would need your thumbstick halfway to the full reach of the thumbstick is when you start to select 
+   a character. Once the thumbstick starts going towards its center, a weight is added so it will become harder to select 
+   another letter, unless you go back at the full reach of the thumbstick. 
+								OR
+   You press your thumbstick down as a button once you hover above a certain character. Although, it sometimes will be hard, and
+   ultimatly will be less intutive for a new user, BUT it is like you're pressing on a keyboard. This hypothesis needs more testing. 

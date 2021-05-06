@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NewControllerSystem.unity
+    path: Assets/Scenes/Extravagant.unity
     guid: b94d154a2368831478551a241caf8e2f
+  - enabled: 0
+    path: Assets/Oculus/Avatar/Samples/Controllers/Controllers.unity
+    guid: 2a83dd010542d2744bf59af99b4bc47c
   m_configObjects: {}
