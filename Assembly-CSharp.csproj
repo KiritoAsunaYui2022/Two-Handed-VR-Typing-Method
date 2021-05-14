@@ -219,8 +219,10 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPPropagationSettings.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPSettings.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPVersion.cs" />
-    <Compile Include="Assets\Scripts\Alphabet.cs" />
+    <Compile Include="Assets\Scripts\AlphabetAlpha.cs" />
+    <Compile Include="Assets\Scripts\AlphabetFallback.cs" />
     <Compile Include="Assets\Scripts\ControllerAxis.cs" />
+    <Compile Include="Assets\Scripts\keyboard.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />

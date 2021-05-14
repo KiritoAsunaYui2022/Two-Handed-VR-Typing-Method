@@ -1,12 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Alphabet
+    - AlphabetAlpha
     - ControllerAxis
     - ONSPSettings
     - OvrAvatar
     - OvrAvatarLocalDriver
     - OvrAvatarSettings
+    - keyboard
     Oculus.Platform.dll:
     - Oculus.Platform.PlatformSettings
     Oculus.VR.Editor.dll:
@@ -86,42 +87,46 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10398}
     - Class: 114
-      Script: {instanceID: 10612}
+      Script: {instanceID: 10610}
     - Class: 114
-      Script: {instanceID: 10656}
+      Script: {instanceID: 10654}
     - Class: 114
-      Script: {instanceID: 10762}
+      Script: {instanceID: 10760}
     - Class: 114
       Script: {instanceID: 10848}
     - Class: 114
       Script: {instanceID: 10858}
     - Class: 114
+      Script: {instanceID: 11558}
+    - Class: 114
       Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11562}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11636}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11654}
     - Class: 114
-      Script: {instanceID: 11656}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11932}
+      Script: {instanceID: 11930}
     - Class: 114
-      Script: {instanceID: 12014}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 12062}
+      Script: {instanceID: 12060}
     - Class: 114
-      Script: {instanceID: 12142}
+      Script: {instanceID: 12140}
     - Class: 114
-      Script: {instanceID: 12254}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12394}
+      Script: {instanceID: 12392}
     - Class: 114
-      Script: {instanceID: 12402}
+      Script: {instanceID: 12400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -748,6 +753,12 @@ ScriptsOnlyBuild:
     className: OVRPlatformMenu
   - hash:
       serializedVersion: 2
+      Hash: c44d201308cd90d93d4fb4597376e26b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AlphabetFallback
+  - hash:
+      serializedVersion: 2
       Hash: f6d3f53988465db91af90171954f7b5e
     assemblyName: Assembly-CSharp.dll
     namespaceName: OculusSampleFramework
@@ -772,10 +783,10 @@ ScriptsOnlyBuild:
     className: InteractableRegistry
   - hash:
       serializedVersion: 2
-      Hash: c44d201308cd90d93d4fb4597376e26b
+      Hash: bc413201630c79d5468c162b6321f2d5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Alphabet
+    className: AlphabetAlpha
   - hash:
       serializedVersion: 2
       Hash: f41dc612e461acf568bc5ca2f9d3c8ea
@@ -1412,6 +1423,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PoseEditHelper
+  - hash:
+      serializedVersion: 2
+      Hash: 5e9891a3b4aaef6c7650db538c25abc3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: keyboard
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
