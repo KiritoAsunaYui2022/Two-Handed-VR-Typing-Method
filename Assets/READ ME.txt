@@ -1,4 +1,4 @@
-BE SURE TO LOOK AT THE "New Typing System Mapping.doc"! 
+BE SURE TO LOOK AT THE "New Typing System Mapping.doc" UNDER "Assets" OUTSIDE THE UNITY EDITOR! 
 
 PURPOSE: 
 
@@ -27,7 +27,7 @@ future features:
 
 2) Maybe a Cusrsor? 
 
-3) Some way to bring the tool in and out of the situation/scene.  
+3) Some way to bring the tool in and out of the situation/scene (Maybe the menu button?). 
 
 4) Highlight or color the selected character before it is chosen. 
 
